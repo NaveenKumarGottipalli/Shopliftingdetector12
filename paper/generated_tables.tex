@@ -1,0 +1,147 @@
+% Auto-generated tables from results/tables/*.csv — DO NOT EDIT BY HAND
+
+\newcommand{\TableCorpora}{%
+\begin{table}[ht!]
+\caption{Summary of the four deduplicated benchmark corpora (\TotalClips{} clips total, \TotalPos{} positives = \TotalPosPct{}) after removing \DupTotal{} SHA-256 byte duplicates (\DupMNNIT{} in MNNIT-S3, \DupShop{} in Shop-Dataset, \DupUCF{} in UCF-Crime) and \ParentUCF{} cross-corpus parent videos.}\label{tab:corpora}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrrrl@{}}
+\toprule
+Dataset & Clips & Pos.\ (\%) & Neg. & Nom.\ grp. & Scenes & Scene size & Scene definition \\
+\midrule
+DCSASS~\cite{dcsass} & 896 & 155 (17.3\%) & 741 & 28 & 28 & 32--32 & Incident source folder \\
+MNNIT-S3~\cite{mnnitmendeley,mnnitkaggle} & 574 & 207 (36.1\%) & 367 & 366 & 64 & 2--32 & Spherical $k$-means (CLIP-B/16) \\
+Shop-Dataset~\cite{shopkaggle} & 581 & 324 (55.8\%) & 257 & --$^{\mathrm{a}}$ & 15 & 12--70 & Spherical $k$-means (CLIP-B/16) \\
+UCF-Crime~\cite{sultani2018} & 302 & 22 (7.3\%) & 280 & 302 & 68 & 1--15 & Spherical $k$-means (CLIP-B/16) \\
+\midrule
+\textbf{Total} & \textbf{2,353} & \textbf{708 (30.1\%)} & \textbf{1,645} & -- & \textbf{175} & \textbf{1--70} & -- \\
+\bottomrule
+\end{tabular*}
+\footnotetext{$^{\mathrm{a}}$Nominal folders in Shop-Dataset are segregated by class label (\texttt{shop lifters} vs.\ \texttt{non shop lifters}), so holding out a nominal folder leaves a single class in the test fold and AUROC is undefined.}
+\end{table}
+}
+
+\newcommand{\TablePooledAudit}{%
+\begin{table}[ht!]
+\caption{Audit of pooled vs.\ unweighted macro evaluation using a trivial Dataset-Identity-Only predictor (assigning every clip the constant positive base rate of its source corpus without inspecting visual features).}\label{tab:pooled_audit}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccccccc@{}}
+\toprule
+Predictor & DCSASS & MNNIT-S3 & Shop-Dataset & UCF-Crime & Macro & Pooled & Pooled Bias ($\Delta$) \\
+\midrule
+Dataset-Identity-Only (AUROC) & 0.500 & 0.500 & 0.500 & 0.500 & \textbf{0.500} & \textbf{0.725} & $+0.225$ \\
+Dataset-Identity-Only (AUPRC) & 0.173 & 0.361 & 0.558 & 0.073 & \textbf{0.291} & \textbf{0.472} & $+0.181$ \\
+\bottomrule
+\end{tabular*}
+\end{table}
+}
+
+\newcommand{\TableSplitAudit}{%
+\begin{table}[ht!]
+\caption{In-domain 5-fold cross-validation AUROC (mean $\pm$ SD across 2 seeds) of the trained MIL head on frozen CLIP ViT-B/16 features under three split rules. Drops are computed from unrounded AUROC values.}\label{tab:split_audit}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcccc@{}}
+\toprule
+Dataset & Random clips & Nominal groups & Strict scenes & Drop ($\text{Random} \to \text{Strict}$) \\
+\midrule
+DCSASS & $0.907 \pm 0.003$ & $0.566 \pm 0.041$ & $0.566 \pm 0.041$ & $-0.341$ \\
+MNNIT-S3 & $0.971 \pm 0.000$ & $0.954 \pm 0.001$ & $0.928 \pm 0.001$ & $-0.043$ \\
+Shop-Dataset & $1.000 \pm 0.000$ & -- & $0.877 \pm 0.005$ & $-0.122$ \\
+\bottomrule
+\end{tabular*}
+\end{table}
+}
+
+\newcommand{\TableLODO}{%
+\begin{table}[ht!]
+\caption{Leave-one-dataset-out (LODO) AUROC per held-out corpus, unweighted macro AUROC (with 95\% scene-cluster bootstrap CI over 500 replicates), macro AUPRC, and macro false alarm rate at 80\% recall ($\text{FAR@80\%R}$).}\label{tab:lodo}
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llcccccccc@{}}
+\toprule
+Backbone & Method & DCSASS & MNNIT-S3 & Shop & UCF & Macro AUROC & 95\% CI & AUPRC & FAR@80 \\
+\midrule
+\multicolumn{10}{@{}l}{\textit{Training-free zero-shot text-prompt baselines}} \\
+CLIP-B/16 & \texttt{zs\_single\_max} & 0.575 & 0.684 & \textbf{0.645} & 0.837 & 0.685 & (0.602--0.754) & 0.456 & 0.534 \\
+CLIP-B/16 & \texttt{zs\_ens8\_mean} & 0.528 & \textbf{0.810} & 0.539 & \textbf{0.884} & \textbf{0.690} & \textbf{(0.631--0.748)} & \textbf{0.479} & \textbf{0.512} \\
+CLIP-B/16 & \texttt{zs\_ens8\_max} & 0.582 & 0.806 & 0.577 & 0.790 & 0.689 & (0.613--0.765) & 0.468 & 0.521 \\
+SigLIP-B/16 & \texttt{zs\_single\_max} & 0.554 & 0.691 & 0.557 & 0.843 & 0.661 & (0.605--0.709) & 0.438 & 0.562 \\
+SigLIP-B/16 & \texttt{zs\_ens8\_mean} & 0.527 & 0.749 & 0.439 & 0.862 & 0.644 & (0.594--0.695) & 0.429 & 0.584 \\
+SigLIP-B/16 & \texttt{zs\_ens8\_max} & 0.503 & 0.792 & 0.424 & 0.878 & 0.649 & (0.600--0.700) & 0.435 & 0.575 \\
+CLIP-L/14 & \texttt{zs\_single\_max} & \textbf{0.611} & 0.650 & 0.582 & 0.766 & 0.652 & (0.589--0.710) & 0.431 & 0.579 \\
+CLIP-L/14 & \texttt{zs\_ens8\_mean} & 0.486 & 0.802 & 0.495 & 0.837 & 0.655 & (0.610--0.704) & 0.442 & 0.568 \\
+CLIP-L/14 & \texttt{zs\_ens8\_max} & 0.521 & 0.801 & 0.462 & 0.856 & 0.660 & (0.599--0.718) & 0.446 & 0.559 \\
+\midrule
+\multicolumn{10}{@{}l}{\textit{Supervised MIL heads trained on the remaining three corpora (3-seed mean)}} \\
+CLIP-B/16 & \texttt{trained\_head} & 0.595 & 0.723 & 0.626 & 0.737 & 0.670 & (0.609--0.722) & 0.448 & 0.546 \\
+CLIP-L/14 & \texttt{trained\_head} & 0.505 & 0.798 & 0.328 & 0.416 & 0.512 & (0.435--0.576) & 0.334 & 0.732 \\
+\bottomrule
+\end{tabular*}
+\end{table}
+}
+
+\newcommand{\TableAblations}{%
+\begin{table}[ht!]
+\caption{LODO ablation of unsupervised scene-mean centering ($\ge 8$ clips per scene) and Group-DRO reweighting on the supervised Top-3 MIL head (Part A), and sensitivity of LODO/CV AUROC to preprocessing constants (Part B: canonical OpenAI CLIP green-channel mean $0.4578275$ and duration $>20$\,s seek vs.\ perturbed $0.4728275$ and size $>15$\,MB seek).}\label{tab:ablations}
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llcccccc@{}}
+\toprule
+\multicolumn{8}{@{}l}{\textbf{Part A: Scene-mean centering and Group-DRO regularizers (LODO AUROC)}} \\
+Backbone & Variant & DCSASS & MNNIT-S3 & Shop & UCF & Macro AUROC & 95\% CI \\
+\midrule
+CLIP-B/16 & \texttt{base} & 0.595 & 0.723 & 0.626 & 0.737 & 0.670 & (0.609--0.722) \\
+CLIP-B/16 & \texttt{center} & 0.588 & 0.715 & 0.618 & 0.729 & 0.663 & (0.601--0.718) \\
+CLIP-B/16 & \texttt{dro} & 0.599 & 0.726 & 0.621 & 0.742 & 0.672 & (0.611--0.726) \\
+CLIP-B/16 & \texttt{center+dro} & 0.591 & 0.719 & 0.614 & 0.734 & 0.665 & (0.603--0.720) \\
+CLIP-L/14 & \texttt{base} & 0.505 & 0.798 & 0.328 & 0.416 & 0.512 & (0.435--0.576) \\
+CLIP-L/14 & \texttt{center} & 0.518 & 0.784 & 0.392 & 0.468 & 0.541 & (0.468--0.605) \\
+CLIP-L/14 & \texttt{dro} & 0.512 & 0.801 & 0.341 & 0.432 & 0.522 & (0.446--0.585) \\
+CLIP-L/14 & \texttt{center+dro} & 0.524 & 0.789 & 0.405 & 0.479 & 0.549 & (0.476--0.612) \\
+\midrule
+\multicolumn{8}{@{}l}{\textbf{Part B: Preprocessing sensitivity check (Canonical vs.\ Perturbed constants)}} \\
+\multicolumn{4}{@{}l}{Evaluation metric / model} & \multicolumn{2}{c}{Canonical ($0.4578$, $>20$\,s)} & Perturbed ($0.4728$, $>15$\,MB) & Shift ($\Delta$) \\
+\midrule
+\multicolumn{4}{@{}l}{CLIP-B/16 \texttt{zs\_ens8\_mean} (LODO Macro AUROC)} & \multicolumn{2}{c}{0.690} & 0.692 & $+0.002$ \\
+\multicolumn{4}{@{}l}{CLIP-B/16 \texttt{zs\_ens8\_max} (LODO Macro AUROC)} & \multicolumn{2}{c}{0.689} & 0.683 & $-0.006$ \\
+\multicolumn{4}{@{}l}{CLIP-B/16 \texttt{zs\_single\_max} (LODO Macro AUROC)} & \multicolumn{2}{c}{0.685} & 0.678 & $-0.007$ \\
+\multicolumn{4}{@{}l}{SigLIP-B/16 \texttt{zs\_single\_max} (LODO Macro AUROC)} & \multicolumn{2}{c}{0.661} & 0.662 & $+0.001$ \\
+\multicolumn{4}{@{}l}{CLIP-L/14 \texttt{zs\_ens8\_mean} (LODO Macro AUROC)} & \multicolumn{2}{c}{0.655} & 0.648 & $-0.007$ \\
+\multicolumn{4}{@{}l}{CLIP-B/16 Trained MIL Head (LODO Macro AUROC)} & \multicolumn{2}{c}{0.670} & 0.615 & $-0.055$ \\
+\multicolumn{4}{@{}l}{CLIP-L/14 Trained MIL Head (LODO Macro AUROC)} & \multicolumn{2}{c}{0.512} & 0.504 & $-0.008$ \\
+\multicolumn{4}{@{}l}{DCSASS Strict-Scene 5-Fold CV (CLIP-B/16)} & \multicolumn{2}{c}{0.566} & 0.528 & $-0.038$ \\
+\multicolumn{4}{@{}l}{MNNIT-S3 Strict-Scene 5-Fold CV (CLIP-B/16)} & \multicolumn{2}{c}{0.928} & 0.941 & $+0.013$ \\
+\multicolumn{4}{@{}l}{Shop-Dataset Strict-Scene 5-Fold CV (CLIP-B/16)} & \multicolumn{2}{c}{0.877} & 0.808 & $-0.069$ \\
+\bottomrule
+\end{tabular*}
+\end{table}
+}
+
+\newcommand{\TablePaired}{%
+\begin{table}[ht!]
+\caption{Paired macro AUROC differences ($\Delta = \text{AUROC}_{\text{zero-shot}} - \text{AUROC}_{\text{trained}}$) across 500 scene-cluster bootstrap replicates, with raw two-sided bootstrap $p$-values and step-down Holm-Bonferroni adjusted $p$-values ($p_{\text{Holm}}$).}\label{tab:paired}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llccccc@{}}
+\toprule
+Zero-shot configuration & Reference trained model & $\Delta$ Macro & 95\% Bootstrap CI & $p_{\text{raw}}$ & $p_{\text{Holm}}$ & Wins \\
+\midrule
+\texttt{clip\_b16|zs\_single\_max} & \texttt{clip\_b16|trained\_head} & $+0.015$ & $(-0.075, +0.101)$ & 0.739 & 1.000 & 2/4 \\
+\texttt{clip\_b16|zs\_ens8\_mean} & \texttt{clip\_b16|trained\_head} & $+0.020$ & $(-0.051, +0.085)$ & 0.565 & 1.000 & 2/4 \\
+\texttt{clip\_b16|zs\_ens8\_max} & \texttt{clip\_b16|trained\_head} & $+0.018$ & $(-0.064, +0.106)$ & 0.678 & 1.000 & 2/4 \\
+\texttt{siglip\_b16|zs\_single\_max} & \texttt{clip\_b16|trained\_head} & $-0.009$ & $(-0.066, +0.044)$ & 0.749 & 1.000 & 1/4 \\
+\texttt{siglip\_b16|zs\_ens8\_mean} & \texttt{clip\_b16|trained\_head} & $-0.026$ & $(-0.085, +0.035)$ & 0.396 & 1.000 & 2/4 \\
+\texttt{siglip\_b16|zs\_ens8\_max} & \texttt{clip\_b16|trained\_head} & $-0.021$ & $(-0.072, +0.035)$ & 0.442 & 1.000 & 2/4 \\
+\texttt{clip\_l14|zs\_single\_max} & \texttt{clip\_b16|trained\_head} & $-0.018$ & $(-0.089, +0.048)$ & 0.607 & 1.000 & 2/4 \\
+\texttt{clip\_l14|zs\_ens8\_mean} & \texttt{clip\_b16|trained\_head} & $-0.015$ & $(-0.072, +0.046)$ & 0.619 & 1.000 & 2/4 \\
+\texttt{clip\_l14|zs\_ens8\_max} & \texttt{clip\_b16|trained\_head} & $-0.011$ & $(-0.078, +0.064)$ & 0.761 & 1.000 & 2/4 \\
+\midrule
+\texttt{clip\_l14|zs\_single\_max} & \texttt{clip\_l14|trained\_head} & $+0.141$ & $(+0.078, +0.206)$ & $<0.001$ & $<0.001$ & 3/4 \\
+\texttt{clip\_l14|zs\_ens8\_mean} & \texttt{clip\_l14|trained\_head} & $+0.143$ & $(+0.071, +0.215)$ & $<0.001$ & $<0.001$ & 3/4 \\
+\texttt{clip\_l14|zs\_ens8\_max} & \texttt{clip\_l14|trained\_head} & $+0.148$ & $(+0.083, +0.216)$ & $<0.001$ & $<0.001$ & 4/4 \\
+\bottomrule
+\end{tabular*}
+\end{table}
+}

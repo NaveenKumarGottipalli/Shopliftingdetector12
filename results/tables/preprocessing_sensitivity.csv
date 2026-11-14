@@ -1,0 +1,11 @@
+metric_or_model,canonical_04578_dur20s,perturbed_04728_size15mb,delta
+CLIP-B/16 zs_ens8_mean (LODO Macro AUROC),0.69,0.692,0.002
+CLIP-B/16 zs_ens8_max (LODO Macro AUROC),0.689,0.683,-0.006
+CLIP-B/16 zs_single_max (LODO Macro AUROC),0.685,0.678,-0.007
+SigLIP-B/16 zs_single_max (LODO Macro AUROC),0.661,0.662,0.001
+CLIP-L/14 zs_ens8_mean (LODO Macro AUROC),0.655,0.648,-0.007
+CLIP-B/16 Trained MIL Head (LODO Macro AUROC),0.67,0.615,-0.055
+CLIP-L/14 Trained MIL Head (LODO Macro AUROC),0.512,0.504,-0.008
+DCSASS Strict-Scene 5-Fold CV (CLIP-B/16),0.566,0.528,-0.038
+MNNIT-S3 Strict-Scene 5-Fold CV (CLIP-B/16),0.928,0.941,0.013
+Shop-Dataset Strict-Scene 5-Fold CV (CLIP-B/16),0.877,0.808,-0.069

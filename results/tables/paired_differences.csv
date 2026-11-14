@@ -1,0 +1,13 @@
+zero_shot,reference,macro_diff,ci_lo,ci_hi,domains_better,p_raw,p_holm
+clip_b16|zs_single_max,clip_b16|trained_head,0.015,-0.075,0.101,2,0.7383,1.0
+clip_b16|zs_ens8_mean,clip_b16|trained_head,0.02,-0.051,0.085,2,0.5643,1.0
+clip_b16|zs_ens8_max,clip_b16|trained_head,0.018,-0.064,0.106,2,0.6781,1.0
+siglip_b16|zs_single_max,clip_b16|trained_head,-0.009,-0.066,0.044,1,0.7484,1.0
+siglip_b16|zs_ens8_mean,clip_b16|trained_head,-0.026,-0.085,0.035,2,0.3957,1.0
+siglip_b16|zs_ens8_max,clip_b16|trained_head,-0.021,-0.072,0.035,2,0.4417,1.0
+clip_l14|zs_single_max,clip_l14|trained_head,0.141,0.078,0.206,3,0.0,0.0
+clip_l14|zs_single_max,clip_b16|trained_head,-0.018,-0.089,0.048,2,0.6065,1.0
+clip_l14|zs_ens8_mean,clip_l14|trained_head,0.143,0.071,0.215,3,0.0001,0.0001
+clip_l14|zs_ens8_mean,clip_b16|trained_head,-0.015,-0.072,0.046,2,0.6183,1.0
+clip_l14|zs_ens8_max,clip_l14|trained_head,0.148,0.083,0.216,4,0.0,0.0
+clip_l14|zs_ens8_max,clip_b16|trained_head,-0.011,-0.078,0.064,2,0.7614,1.0

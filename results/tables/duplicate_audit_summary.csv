@@ -1,0 +1,6 @@
+dataset,raw_candidates,sha256_duplicates_removed,cross_corpus_parents_removed,final_deduplicated_clips
+DCSASS,896,0,0,896
+MNNIT-S3,589,15,0,574
+Shop-Dataset,799,218,0,581
+UCF-Crime,352,22,28,302
+Total,2636,255,28,2353

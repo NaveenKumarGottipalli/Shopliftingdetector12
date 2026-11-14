@@ -1,0 +1,5 @@
+dataset,clips,positive_clips,negative_clips,pos_rate,nominal_groups,strict_scenes,smallest_scene,largest_scene,scene_definition
+DCSASS,896,155,741,0.172991,28.0,28,32,32,source_folder
+MNNIT-S3,574,207,367,0.360627,366.0,64,2,32,spherical_kmeans_clip_b16
+Shop-Dataset,581,324,257,0.557659,,15,12,70,spherical_kmeans_clip_b16
+UCF-Crime,302,22,280,0.072848,302.0,68,1,15,spherical_kmeans_clip_b16

@@ -1,0 +1,117 @@
+{
+  "repository": "https://github.com/NaveenKumarGottipalli/Shopliftingdetector",
+  "dataset_repo": "https://huggingface.co/datasets/NaveenKumarGottipalli/Shoplifting_DataCollection",
+  "version": "2.0.0",
+  "total_deduplicated_clips": 2353,
+  "removed_exact_duplicates": {
+    "total": 255,
+    "MNNIT-S3": 15,
+    "Shop-Dataset": 218,
+    "UCF-Crime": 22
+  },
+  "removed_parent_videos": {
+    "UCF-Crime_parents_of_DCSASS": 28
+  },
+  "frames_per_clip": 32,
+  "image_size": 224,
+  "long_video_seek_threshold_sec": 20.0,
+  "normalization": {
+    "clip": {
+      "mean": [
+        0.48145466,
+        0.4578275,
+        0.40821073
+      ],
+      "std": [
+        0.26862954,
+        0.26130258,
+        0.27577711
+      ]
+    },
+    "siglip": {
+      "mean": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "std": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    }
+  },
+  "backbones": {
+    "clip_b16": "openai/clip-vit-base-patch16",
+    "siglip_b16": "google/siglip-base-patch16-224",
+    "clip_l14": "openai/clip-vit-large-patch14"
+  },
+  "trained_backbones": [
+    "clip_b16",
+    "clip_l14"
+  ],
+  "strict_scene_clusters": {
+    "DCSASS": 28,
+    "MNNIT-S3": 64,
+    "Shop-Dataset": 15,
+    "UCF-Crime": 68
+  },
+  "mil_head": {
+    "hidden_dim": 128,
+    "dropout": 0.3,
+    "top_k_pooling": 3,
+    "optimizer": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.01,
+    "batch_size": 64,
+    "epochs": 25,
+    "seeds_lodo": [
+      0,
+      1,
+      2
+    ],
+    "seeds_cv": [
+      0,
+      1
+    ],
+    "ablation_methods": [
+      "base",
+      "center",
+      "dro",
+      "center+dro"
+    ],
+    "scene_center_min_clips": 8,
+    "group_dro_step_size": 0.01
+  },
+  "bootstrap_replicates": 500,
+  "prompts": {
+    "pos_2": [
+      "a person shoplifting in a store",
+      "a person hiding merchandise in a pocket or bag"
+    ],
+    "neg_2": [
+      "a customer shopping normally in a store",
+      "an empty store aisle"
+    ],
+    "pos_8": [
+      "a person shoplifting in a store",
+      "a person hiding merchandise in a pocket or bag",
+      "a shopper concealing an item under their jacket",
+      "a thief stealing products from a shelf",
+      "a person putting store items into their bag without paying",
+      "a person secretly pocketing an item in a shop",
+      "a customer stuffing goods into a backpack",
+      "someone stealing from a retail store"
+    ],
+    "neg_8": [
+      "a customer shopping normally in a store",
+      "an empty store aisle",
+      "a shopper browsing products on a shelf",
+      "a customer pushing a shopping cart",
+      "a person paying at a checkout counter",
+      "a customer walking through a store aisle",
+      "a shop assistant stocking shelves",
+      "people queuing in a shop"
+    ]
+  }
+}

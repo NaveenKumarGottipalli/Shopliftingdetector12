@@ -1,0 +1,114 @@
+\begin{thebibliography}{12}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Sultani et~al.(2018)Sultani, Chen, and Shah]{sultani2018}
+Waqas Sultani, Chen Chen, and Mubarak Shah.
+\newblock Real-world anomaly detection in surveillance videos.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision
+  and Pattern Recognition (CVPR)}, pages 6479--6488, 2018.
+\newblock \doi{10.1109/CVPR.2018.00678}.
+\newblock URL
+  \url{https://openaccess.thecvf.com/content_cvpr_2018/html/Sultani_Real-World_Anomaly_Detection_CVPR_2018_paper.html}.
+
+\bibitem[Tian et~al.(2021)Tian, Pang, Chen, Singh, Verjans, and
+  Carneiro]{tian2021}
+Yu~Tian, Guansong Pang, Yuanhong Chen, Rajvinder Singh, Johan~W. Verjans, and
+  Gustavo Carneiro.
+\newblock Weakly-supervised video anomaly detection with robust temporal
+  feature magnitude learning.
+\newblock In \emph{Proceedings of the IEEE/CVF International Conference on
+  Computer Vision (ICCV)}, pages 4975--4986, 2021.
+\newblock \doi{10.1109/ICCV48922.2021.00493}.
+\newblock URL
+  \url{https://openaccess.thecvf.com/content/ICCV2021/html/Tian_Weakly-Supervised_Video_Anomaly_Detection_With_Robust_Temporal_Feature_Magnitude_Learning_ICCV_2021_paper.html}.
+
+\bibitem[Ansari and Singh(2022)]{ansari2022esar}
+Mohd.~Aquib Ansari and Dushyant~Kumar Singh.
+\newblock {ESAR}, an expert shoplifting activity recognition system.
+\newblock \emph{Cybernetics and Information Technologies}, 22\penalty0
+  (1):\penalty0 190--203, 2022.
+\newblock URL
+  \url{https://www.researchgate.net/publication/359209625_ESAR_An_Expert_Shoplifting_Activity_Recognition_System}.
+
+\bibitem[Hervas and Linares(2021)]{dcsass}
+Mateo Hervas and Diego Linares.
+\newblock {DCSASS Dataset: Dynamic Categorization of Surveillance Anomaly
+  Sub-Clips}.
+\newblock Kaggle Repository (\texttt{mateohervas/dcsass-dataset}), derived from
+  UCF-Crime, 2021.
+\newblock URL \url{https://www.kaggle.com/datasets/mateohervas/dcsass-dataset}.
+
+\bibitem[Ansari and Singh(2023)]{mnnitmendeley}
+Mohd.~Aquib Ansari and Dushyant~Kumar Singh.
+\newblock {Shoplifting Dataset (2022) -- CV Laboratory MNNIT Allahabad}.
+\newblock Mendeley Data, V1 (2023) and V2 (2024), 2023.
+\newblock URL \url{https://data.mendeley.com/datasets/r3yjf35hzr/1}.
+
+\bibitem[{callmekio}(2023)]{mnnitkaggle}
+{callmekio}.
+\newblock {Shoplifting Detection Dataset (Processed Release of MNNIT-S3)}.
+\newblock Kaggle Repository (\texttt{callmekio/shopliftingdataset}), 2023.
+\newblock URL
+  \url{https://www.kaggle.com/datasets/callmekio/shopliftingdataset}.
+
+\bibitem[Elg(2023)]{shopkaggle}
+Omar Elg.
+\newblock {Shoplifting Videos Dataset}.
+\newblock Kaggle Repository (\texttt{omarelg/shoplifting-videos-dataset}),
+  2023.
+\newblock URL
+  \url{https://www.kaggle.com/datasets/omarelg/shoplifting-videos-dataset}.
+
+\bibitem[Radford et~al.(2021)Radford, Kim, Hallacy, Ramesh, Goh, Agarwal,
+  Sastry, Askell, Mishkin, Clark, Krueger, and Sutskever]{radford2021}
+Alec Radford, Jong~Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh,
+  Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark,
+  Gretchen Krueger, and Ilya Sutskever.
+\newblock Learning transferable visual models from natural language
+  supervision.
+\newblock In \emph{Proceedings of the 38th International Conference on Machine
+  Learning (ICML)}, volume 139 of \emph{Proceedings of Machine Learning
+  Research}, pages 8748--8763, 2021.
+\newblock URL \url{https://proceedings.mlr.press/v139/radford21a.html}.
+
+\bibitem[Zhai et~al.(2023)Zhai, Mustafa, Kolesnikov, and Beyer]{zhai2023}
+Xiaohua Zhai, Basil Mustafa, Alexander Kolesnikov, and Lucas Beyer.
+\newblock Sigmoid loss for language image pre-training.
+\newblock In \emph{Proceedings of the IEEE/CVF International Conference on
+  Computer Vision (ICCV)}, pages 11975--11986, 2023.
+\newblock \doi{10.1109/ICCV51070.2023.01100}.
+\newblock URL
+  \url{https://openaccess.thecvf.com/content/ICCV2023/html/Zhai_Sigmoid_Loss_for_Language_Image_Pre-Training_ICCV_2023_paper.html}.
+
+\bibitem[Zhou et~al.(2023)Zhou, Yu, and Yang]{zhou2023urdmu}
+Hang Zhou, Junqing Yu, and Wei Yang.
+\newblock Dual memory units with uncertainty regulation for weakly supervised
+  video anomaly detection.
+\newblock In \emph{Proceedings of the AAAI Conference on Artificial
+  Intelligence}, volume~37, pages 3769--3777, 2023.
+\newblock \doi{10.1609/aaai.v37i3.25489}.
+\newblock URL \url{https://ojs.aaai.org/index.php/AAAI/article/view/25489}.
+
+\bibitem[Pu et~al.(2024)Pu, Wu, Yang, and Wang]{pu2024pel4vad}
+Yujiang Pu, Xiaoyu Wu, Lulu Yang, and Shengjin Wang.
+\newblock Learning prompt-enhanced context features for weakly-supervised video
+  anomaly detection.
+\newblock \emph{IEEE Transactions on Image Processing}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2306.14451}.
+\newblock arXiv:2306.14451.
+
+\bibitem[Wu et~al.(2024)Wu, Zhou, Pang, Zhou, Yan, Wang, and Zhang]{wu2024}
+Peng Wu, Xuerong Zhou, Guansong Pang, Lingru Zhou, Qingsen Yan, Peng Wang, and
+  Yanning Zhang.
+\newblock {VadCLIP}: Adapting vision-language models for weakly supervised
+  video anomaly detection.
+\newblock In \emph{Proceedings of the AAAI Conference on Artificial
+  Intelligence}, volume~38, pages 6074--6082, 2024.
+\newblock \doi{10.1609/aaai.v38i6.28423}.
+\newblock URL \url{https://ojs.aaai.org/index.php/AAAI/article/view/28423}.
+
+\end{thebibliography}

@@ -1,0 +1,9 @@
+domain,split_rule,n_groups,auroc,std,auprc,far_at_80r
+DCSASS,random_clip,896,0.906996,0.003282,0.741,0.142
+DCSASS,nominal_group,28,0.565935,0.040595,0.224,0.728
+DCSASS,strict_scene,28,0.565935,0.040595,0.224,0.728
+MNNIT-S3,random_clip,574,0.970567,0.000487,0.952,0.049
+MNNIT-S3,nominal_group,366,0.95383,0.000559,0.926,0.076
+MNNIT-S3,strict_scene,64,0.927905,0.000908,0.887,0.114
+Shop-Dataset,random_clip,581,0.999946,3e-05,0.999,0.0
+Shop-Dataset,strict_scene,15,0.877486,0.005134,0.892,0.218

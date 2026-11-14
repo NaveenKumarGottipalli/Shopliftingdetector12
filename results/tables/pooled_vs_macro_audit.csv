@@ -1,0 +1,2 @@
+predictor,DCSASS_auroc,MNNIT-S3_auroc,Shop-Dataset_auroc,UCF-Crime_auroc,macro_auroc,pooled_auroc,pooled_auroc_bias,DCSASS_auprc,MNNIT-S3_auprc,Shop-Dataset_auprc,UCF-Crime_auprc,macro_auprc,pooled_auprc,pooled_auprc_bias
+Dataset-Identity-Only Baseline,0.5,0.5,0.5,0.5,0.5,0.7252,0.2252,0.173,0.3606,0.5577,0.0728,0.291,0.4722,0.1812
